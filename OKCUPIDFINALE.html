@@ -335,26 +335,10 @@ for(v in vars_cat) {
   train.auc &lt;- calcAUC(train[,pi],train$Class)
   nlvls &lt;- length(unique(train[,pi]))
   calib.auc &lt;- calcAUC(calib[,pi],calib$Class)
-  print(sprintf(&quot;%s, trainAUC: %4.3f calibrationAUC: %4.3f&quot;,
-                paste(pi,&quot;(&quot;,nlvls,&quot;)&quot;), train.auc,calib.auc))
-}</code></pre>
-<pre><code>[1] &quot;score body_type ( 13 ), trainAUC: 0.569 calibrationAUC: 0.512&quot;
-[1] &quot;score diet ( 15 ), trainAUC: 0.530 calibrationAUC: 0.511&quot;
-[1] &quot;score drinks ( 7 ), trainAUC: 0.514 calibrationAUC: 0.525&quot;
-[1] &quot;score drugs ( 4 ), trainAUC: 0.517 calibrationAUC: 0.511&quot;
-[1] &quot;score education ( 29 ), trainAUC: 0.646 calibrationAUC: 0.651&quot;
-[1] &quot;score income ( 13 ), trainAUC: 0.596 calibrationAUC: 0.566&quot;
-[1] &quot;score offspring ( 16 ), trainAUC: 0.550 calibrationAUC: 0.521&quot;
-[1] &quot;score orientation ( 3 ), trainAUC: 0.519 calibrationAUC: 0.519&quot;
-[1] &quot;score pets ( 16 ), trainAUC: 0.564 calibrationAUC: 0.548&quot;
-[1] &quot;score religion ( 10 ), trainAUC: 0.611 calibrationAUC: 0.632&quot;
-[1] &quot;score sign ( 13 ), trainAUC: 0.576 calibrationAUC: 0.544&quot;
-[1] &quot;score smokes ( 6 ), trainAUC: 0.544 calibrationAUC: 0.535&quot;
-[1] &quot;score status ( 5 ), trainAUC: 0.513 calibrationAUC: 0.522&quot;
-[1] &quot;score where_town ( 47 ), trainAUC: 0.599 calibrationAUC: 0.557&quot;
-[1] &quot;score religion_modifer ( 5 ), trainAUC: 0.525 calibrationAUC: 0.512&quot;
-[1] &quot;score sign_modifer ( 4 ), trainAUC: 0.571 calibrationAUC: 0.574&quot;</code></pre>
-<pre class="r"><code>#DATASET FINALE
+}
+
+
+#DATASET FINALE
 train.prov &lt;- train[,c(1,7,9,20:124)]
 calib.prov &lt;- calib[,c(1,7,9,20:124)]
 train.def &lt;- rbind(train.prov,calib.prov)
